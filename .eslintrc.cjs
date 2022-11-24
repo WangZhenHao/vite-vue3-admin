@@ -20,10 +20,13 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    "vue/multi-word-component-names": ['off'],
-    "vue/multiline-html-element-content-newline": ['off'],
-    "vue/singleline-html-element-content-newline": ['off'],
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/ban-types": "off"
+    'vue/html-indent': ['error', 2],
+    'vue/multi-word-component-names': ['off'],
+    'vue/multiline-html-element-content-newline': ['off'],
+    'vue/singleline-html-element-content-newline': ['off'],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    'prefer-rest-params': 'off',
+    '@typescript-eslint/no-this-alias': 'off',
   },
 };

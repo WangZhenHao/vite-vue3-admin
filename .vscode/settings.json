@@ -5,7 +5,17 @@
     "source.fixAll.eslint": true
   },
   // 保存的时候自动格式化
-//   "editor.formatOnSave": false
+  "editor.formatOnSave": true,
   // 默认格式化工具选择prettier
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vetur.format.defaultFormatterOptions": {
+    "prettyhtml": {
+      "sortAttributes": true,
+      "tabWidth": 2
+    },
+    "prettier": {
+      "singleQuote": true,
+      "tabWidth": 2
+    }
+  }
 }

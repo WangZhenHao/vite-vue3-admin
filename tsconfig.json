@@ -12,17 +12,16 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "types": [
-      "node"
-    ],
+    "noImplicitThis": false,
+    "types": ["node"],
     "baseUrl": "./",
     "paths": {
-        "@views/*": ["./src/views/*"],
-        "@js/*": ["src/assets/js/*"],
-        "@css/*": ["src/assets/css/*"],
-        "@img/*": ["src/assets/img/*"],
-        "@api/*": ["src/api/*"],
-        "@store/*": ["src/store/*"]
+      "@views/*": ["./src/views/*"],
+      "@js/*": ["src/assets/js/*"],
+      "@css/*": ["src/assets/css/*"],
+      "@img/*": ["src/assets/img/*"],
+      "@api/*": ["src/api/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

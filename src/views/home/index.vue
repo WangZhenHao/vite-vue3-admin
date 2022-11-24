@@ -11,12 +11,8 @@ import { ref } from 'vue';
 
 console.log('a');
 function test() {
-    const json = {
-        a: 1,
-        b: 2,
-    };
-
-    console.log(json);
+  const json = { a: 1, b: 2 };
+  console.log(json);
 }
 
 test();
