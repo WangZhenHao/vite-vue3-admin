@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app,
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'microsoft yahei',
+    arial, STHeiTi, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex-box {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-s-b {
+  justify-content: space-between;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.overflew {
+  overflow: hidden;
+}
+
+.font-b {
+  font-weight: 700;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+.bg-f {
+  background: #fff;
+}
+
+.bg-f5 {
+  background: #f5f5f5;
+}
+
+.bg-main {
+  background: #3366ff;
+}
+
+.color-f {
+  color: #fff;
+}
+
+.color-3 {
+  color: #333;
+}
+
+.color-6 {
+  color: #666;
+}
+
+.color-9 {
+  color: #999;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text_over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text_over_3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.text-th {
+  text-decoration: line-through;
+}
