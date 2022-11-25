@@ -1,5 +1,7 @@
 <template>
-  <div data="1">测试测试{{ msg }}</div>
+  <el-button type="primary">测试</el-button>
+  {{ msg }}
+  {{ $filters.filterMoeny('10.02') }}
   <div
     :class="{'a': true, 'b': false, 'c': true}"
     class="clas"

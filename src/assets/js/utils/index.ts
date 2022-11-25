@@ -4,7 +4,7 @@
  * @param {[type]} data [description]
  */
 export function dateToTimestamp(data: string) {
-  return Date.parse(data);
+  return Date.parse(data.replace(/-/g, '/'));
 }
 /**
  * Unix时间戳转成时间
@@ -28,7 +28,7 @@ export function timestampToDate(timestamp: string, format: string) {
     minute = date.getMinutes(),
     second = date.getSeconds();
 
-  const str = format.replace(/y+|m+|d+|h+|s+/gi, function (w) {
+  const str = format.replace(/y+|m+|d+|h+|s+/gi, function (w: string) {
     if (w == 'yy' || w == 'YY' || w == 'y' || w == 'Y') {
       return year.toString().substring(2);
     } else if (w == 'yyyy' || w == 'YYYY') {
@@ -115,10 +115,10 @@ export function debounce(fn: Function, wait: number) {
 }
 
 export function getLocalStorage(key: string) {
-  const json = JSON.parse(localStorage.getItem(key));
+  const json = JSON.parse(localStorage.getItem(key) || '');
   if (json) {
     if (json.expires) {
-      const timestamp = parseInt(+new Date() / 1000);
+      const timestamp = Math.floor(+new Date() / 1000);
       if (timestamp > json.expires) {
         clearLocalStorage(key);
         return null;
@@ -135,11 +135,15 @@ export function getLocalStorage(key: string) {
  * @param {[type]} value 	值		     必填
  * @param {[type]} expires  保存多少秒   可填(秒)
  */
-export function setLocalStorage(key: string, value: any, expires: number) {
-  const json = {};
+export function setLocalStorage(
+  key: string,
+  value: any,
+  expires?: number
+): void {
+  const json: any = {};
   json[key] = value;
   if (expires) {
-    const timestamp = parseInt(+new Date() / 1000) + expires;
+    const timestamp = Math.floor(+new Date() / 1000) + expires;
     json['expires'] = timestamp;
   }
 
@@ -150,7 +154,7 @@ export function setLocalStorage(key: string, value: any, expires: number) {
  * @param {[type]} key 	键		可填(默认清除所有)
  * @return {[type]} [description]
  */
-export function clearLocalStorage(key) {
+export function clearLocalStorage(key?: string): void {
   if (key) {
     localStorage.removeItem(key);
   } else {
