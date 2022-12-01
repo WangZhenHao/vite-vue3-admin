@@ -28,5 +28,9 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     'prefer-rest-params': 'off',
     '@typescript-eslint/no-this-alias': 'off',
+    'vue/html-self-closing': ['off'],
+  },
+  global: {
+    tools: true,
   },
 };

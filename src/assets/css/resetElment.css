@@ -1,0 +1,16 @@
+/* .el-menu {
+  background-color: unset;
+  color: #fff;
+}
+
+.el-sub-menu__title,
+.el-menu-item {
+  color: #fff;
+}
+
+.el-menu-item:hover {
+  background-color: #283446;
+} */
+.el-menu {
+  border-width: 0;
+}

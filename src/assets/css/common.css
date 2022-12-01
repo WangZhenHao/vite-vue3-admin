@@ -135,3 +135,11 @@ a {
 .text-th {
   text-decoration: line-through;
 }
+
+.p-l-10 {
+  padding-left: 10px;
+}
+
+.p-r-10 {
+  padding-right: 10px;
+}
