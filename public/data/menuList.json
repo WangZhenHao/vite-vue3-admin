@@ -1,0 +1,13 @@
+{
+  "code": "0",
+  "result": [
+    {
+      "id": "1",
+      "parentId": "0",
+      "sort": "1",
+      "path": "/systment",
+      "name": "系统管理",
+      "icon": "message"
+    }
+  ]
+}

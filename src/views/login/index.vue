@@ -1,3 +1,6 @@
 <template>
-  登录页面
+  <el-button @click="getMenuListHanlde">点击获取</el-button>
 </template>
+<script lang="ts" setup>
+const getMenuListHanlde = () => {};
+</script>

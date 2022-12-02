@@ -1,0 +1,3 @@
+interface MenuList {
+  userId: string;
+}
