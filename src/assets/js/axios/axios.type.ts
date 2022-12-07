@@ -16,6 +16,12 @@ export interface apiServer {
   baseURL: string;
   [key: string]: string;
 }
+
+export interface respoonceRse {
+  code: number;
+  msg: string;
+  result: any;
+}
 // export interface myAxiosResponse<T = any, D = any> extends AxiosResponse {
 //   config: myAxiosRequestConfig<D>;
 // }

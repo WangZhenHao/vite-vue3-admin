@@ -1,5 +1,5 @@
 import { request, CancelToken } from './request';
-import type { optionsParams, apiServer } from './axios.type';
+import type { optionsParams, apiServer, respoonceRse } from './axios.type';
 
 const $apiServer: apiServer = {
   baseURL: `${import.meta.env.VITE_API}`,
@@ -18,10 +18,9 @@ function isAbsoluteURL(url: string) {
  * @param params
  * @param options
  */
-function iget(url: string, params?: any, options: optionsParams = {}) {
+function iget(url: string, params?: any, options: optionsParams = {}): Promise<respoonceRse> {
   const target = options.target || 'baseURL';
   const origin = $apiServer[target] || '';
-
   options['method'] = 'GET';
   options['action'] = 'json';
   url = isAbsoluteURL(url) ? url : origin + url;
@@ -35,7 +34,7 @@ function iget(url: string, params?: any, options: optionsParams = {}) {
  * @param params
  * @param options
  */
-function ipost(url: string, params?: any, options: optionsParams = {}) {
+function ipost(url: string, params?: any, options: optionsParams = {}): Promise<respoonceRse> {
   const target = options.target || 'baseURL';
   const origin = $apiServer[target] || '';
 

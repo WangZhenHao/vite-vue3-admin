@@ -5,7 +5,7 @@ import type {
   myAxiosRequestConfig,
   // myAxiosResponse,
 } from './axios.type';
-import type { AxiosError } from 'axios';
+import type { AxiosError, AxiosResponse } from 'axios';
 
 function Toast(text: string) {
   ElMessage({
@@ -107,7 +107,7 @@ const Axios = axios.create(reqConfig);
 // 返回数据全部遍历做处理
 
 Axios.interceptors.response.use(
-  (res) => {
+  (res: AxiosResponse) => {
     const data = res.data;
     const userConfig = (res.config as myAxiosRequestConfig).userConfig;
 
@@ -140,7 +140,11 @@ Axios.interceptors.response.use(
  * @param params
  * @param options
  */
-function request(url: string, params: any, options: optionsParams) {
+function request(
+  url: string,
+  params: any,
+  options: optionsParams
+): Promise<any> {
   const method = options.method || 'GET';
   let action = 'application/json;charset=UTF-8';
   // const timeout = options.timeout || 15000

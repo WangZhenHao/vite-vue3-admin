@@ -1,5 +1,6 @@
-import { ipost } from '@js/axios';
+import { ipost, iget } from '@js/axios';
+import * as type from './type';
 
-export function getMenuList(data: MenuList) {
-  return ipost('/data/menuList.json', data);
-}
+export const getMenuList = function (data: type.getMenuListData) {
+  return iget('/data/menuList.json', data);
+};
