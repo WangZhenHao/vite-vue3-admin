@@ -1,3 +1,5 @@
+import { stringify } from 'querystring';
+
 /**
  * 日期时间换成Unix时间戳
  * data  	时间戳    必填
@@ -28,29 +30,31 @@ export function timestampToDate(timestamp: string, format: string) {
     minute = date.getMinutes(),
     second = date.getSeconds();
 
-  const str = format.replace(/y+|m+|d+|h+|s+/gi, function (w: string) {
+  const str = format.replace(/y+|m+|d+|h+|s+/gi, function (w: string): string {
     if (w == 'yy' || w == 'YY' || w == 'y' || w == 'Y') {
       return year.toString().substring(2);
     } else if (w == 'yyyy' || w == 'YYYY') {
-      return year;
+      return String(year);
     } else if (w == 'MM') {
-      return month >= 10 ? month : '0' + month;
+      return String(month >= 10 ? month : '0' + month);
     } else if (w == 'M') {
-      return month;
+      return String(month);
     } else if (w == 'DD' || w == 'dd') {
-      return day >= 10 ? day : '0' + day;
+      return String(day >= 10 ? day : '0' + day);
     } else if (w == 'D' || w == 'd') {
-      return day;
+      return String(day);
     } else if (w == 'HH' || w == 'hh') {
-      return hour >= 10 ? hour : '0' + hour;
+      return String(hour >= 10 ? hour : '0' + hour);
     } else if (w == 'H' || w == 'h') {
-      return hour;
+      return String(hour);
     } else if (w == 'mm') {
-      return minute >= 10 ? minute : '0' + minute;
+      return String(minute >= 10 ? minute : '0' + minute);
     } else if (w == 'm') {
-      return minute;
+      return String(minute);
     } else if (w == 'ss' || w == 's') {
-      return second >= 10 ? second : '0' + second;
+      return String(second >= 10 ? second : '0' + second);
+    } else {
+      return w;
     }
   });
   return str;
@@ -135,11 +139,7 @@ export function getLocalStorage(key: string) {
  * @param {[type]} value 	值		     必填
  * @param {[type]} expires  保存多少秒   可填(秒)
  */
-export function setLocalStorage(
-  key: string,
-  value: any,
-  expires?: number
-): void {
+export function setLocalStorage(key: string, value: any, expires?: number): void {
   const json: any = {};
   json[key] = value;
   if (expires) {

@@ -3,8 +3,8 @@
 // }
 
 export interface getMenuListData {
-  name: string;
-  age: number;
+  username: string;
+  password: string;
 }
 
 export interface getMenuListRes {

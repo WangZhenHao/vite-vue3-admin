@@ -13,7 +13,7 @@ let msg = reactive<typeLogin.getMenuListRes>({
   address: '',
 });
 const getMenuListHanlde = () => {
-  getMenuList({ name: 'w', age: 12 }).then((res) => {
+  getMenuList({ username: 'w', password: '12' }).then((res) => {
     msg = res.result;
   });
 };
