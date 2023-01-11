@@ -7,7 +7,12 @@ export interface getMenuListData {
   password: string;
 }
 
-export interface getMenuListRes {
+export interface menu {
   id: string;
-  address: string;
+  parentId: string;
+  sort: string;
+  path: string;
+  name: string;
+  icon?: string;
+  child?: any;
 }
