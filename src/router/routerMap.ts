@@ -1,11 +1,12 @@
-interface Compoent {
-  path: string;
-  name: string;
-  component: Function;
-  mate?: Object;
-}
+// interface Compoent {
+//   path: string;
+//   name: string;
+//   component: Function;
+//   mate?: Object;
+// }
+import { RouteRecordRaw } from 'vue-router';
 export interface Mapkey {
-  [key: string]: Compoent;
+  [key: string]: RouteRecordRaw;
 }
 
 const map: Mapkey = {
@@ -13,7 +14,7 @@ const map: Mapkey = {
     path: '/system/menuList',
     name: 'menuList',
     component: () => import('@views/system/menuList/index.vue'),
-    mate: {
+    meta: {
       title: '菜单列表',
     },
   },
@@ -21,7 +22,7 @@ const map: Mapkey = {
     path: '/system/roleList',
     name: 'roleList',
     component: () => import('@views/system/roleList/index.vue'),
-    mate: {
+    meta: {
       title: '角色列表',
     },
   },
