@@ -1,1 +1,1 @@
-<view>菜单列表</view>
+<template>菜单列表</template>

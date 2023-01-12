@@ -1,3 +1,3 @@
 <template>
-  <div>dfdsf</div>
+  <div></div>
 </template>

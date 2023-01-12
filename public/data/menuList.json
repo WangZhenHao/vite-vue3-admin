@@ -15,22 +15,15 @@
         "id": "2",
         "parentId": "1",
         "sort": "1",
-        "path": "/system/list",
+        "path": "/system/menuList",
         "name": "菜单列表"
       },
       {
         "id": "3",
         "parentId": "1",
         "sort": "1",
-        "path": "/system/role",
+        "path": "/system/roleList",
         "name": "角色列表"
-      },
-      {
-        "id": "4",
-        "parentId": "0",
-        "sort": "1",
-        "path": "/home",
-        "name": "首页"
       }
     ]
   }

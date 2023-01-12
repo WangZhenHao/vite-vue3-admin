@@ -140,11 +140,7 @@ Axios.interceptors.response.use(
  * @param params
  * @param options
  */
-function request(
-  url: string,
-  params: any,
-  options: optionsParams
-): Promise<any> {
+function request(url: string, params: any, options: optionsParams): Promise<any> {
   const method = options.method || 'GET';
   let action = 'application/json;charset=UTF-8';
   // const timeout = options.timeout || 15000

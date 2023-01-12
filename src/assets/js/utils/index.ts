@@ -119,8 +119,10 @@ export function debounce(fn: Function, wait: number) {
 }
 
 export function getLocalStorage(key: string) {
-  const json = JSON.parse(localStorage.getItem(key) || '');
+  let json: any = localStorage.getItem(key);
+  // const json = JSON.parse(localStorage.getItem(key) || '');
   if (json) {
+    json = JSON.parse(json);
     if (json.expires) {
       const timestamp = Math.floor(+new Date() / 1000);
       if (timestamp > json.expires) {

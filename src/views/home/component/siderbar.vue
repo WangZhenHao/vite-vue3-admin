@@ -12,16 +12,23 @@
         router
         text-color="#bfcbd9"
       >
-        <el-sub-menu index="1">
+        <el-sub-menu
+          :key="item.id"
+          v-for="item in menuList"
+        >
           <template #title>
             <el-icon>
-              <component :is="'message'"></component>
+              <component :is="item.icon"></component>
             </el-icon>
-            <span>Navigator One</span>
+            <span>{{ item.name }}</span>
           </template>
-          <el-menu-item index="1-1">Option 1</el-menu-item>
-          <el-menu-item index="1-2">Option 2</el-menu-item>
-          <el-menu-item index="1-3">Option 3</el-menu-item>
+          <el-menu-item
+            :index="sub.path"
+            :key="sub.id"
+            v-for="sub in item.child"
+          >{{ sub.name }}</el-menu-item>
+          <!-- <el-menu-item index="1-2">Option 2</el-menu-item>
+          <el-menu-item index="1-3">Option 3</el-menu-item>-->
         </el-sub-menu>
       </el-menu>
     </el-scrollbar>
@@ -39,9 +46,14 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import useSilder from '@store/siderbar';
+import user from '@store/user';
+import * as type from '@api/login/type';
 
 const silder = useSilder();
+const userInfo = user();
 const arrowIcon = ref('ArrowLeftBold');
+
+const menuList = ref<type.menu[]>(userInfo.menuList);
 
 const switchCollapseHanlde = () => {
   if (silder.isCollapse) {

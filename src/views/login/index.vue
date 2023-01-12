@@ -54,6 +54,7 @@ import user from '@store/user';
 import { useRouter } from 'vue-router';
 
 const userStore = user();
+const router = useRouter();
 
 const rules: FormRules = {
   username: [
@@ -68,8 +69,8 @@ const rules: FormRules = {
 const loading = ref(false);
 
 let form = reactive<typeLogin.getMenuListData>({
-  username: '',
-  password: '',
+  username: 'admin',
+  password: '123456',
 });
 const loginFormRef = ref<FormInstance>();
 
@@ -79,7 +80,7 @@ const submitForm = (loginForm: FormInstance | undefined) => {
   loginForm.validate((valid) => {
     if (valid) {
       userStore.login(form).then(() => {
-        useRouter().replace('/home');
+        router.replace({ path: '/system/roleList' });
       });
     }
   });

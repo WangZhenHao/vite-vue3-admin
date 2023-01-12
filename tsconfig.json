@@ -17,6 +17,7 @@
     "baseUrl": "./",
     "paths": {
       "@views/*": ["./src/views/*"],
+      "@router/*": ["./src/router/*"],
       "@js/*": ["src/assets/js/*"],
       "@css/*": ["src/assets/css/*"],
       "@img/*": ["src/assets/img/*"],
