@@ -37,7 +37,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   nprogress.start();
-
+  console.log(to);
   const userInfo = user();
   if (to.name === 'Login') {
     if (!userInfo.menuList.length) {

@@ -6,6 +6,8 @@
     <el-scrollbar>
       <el-menu
         :collapse="silder.isCollapse"
+        :default-active="onRoutes"
+        :default-openeds="[0]"
         active-text-color="#20a0ff"
         background-color="#324157"
         class="el-menu-wrap"
@@ -13,8 +15,9 @@
         text-color="#bfcbd9"
       >
         <el-sub-menu
+          :index="index"
           :key="item.id"
-          v-for="item in menuList"
+          v-for="(item, index) in userInfo.menuList"
         >
           <template #title>
             <el-icon>
@@ -44,17 +47,20 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import useSilder from '@store/siderbar';
 import user from '@store/user';
-import * as type from '@api/login/type';
+import { useRoute } from 'vue-router';
 
 const silder = useSilder();
 const userInfo = user();
 const arrowIcon = ref('ArrowLeftBold');
 
-const menuList = ref<type.menu[]>(userInfo.menuList);
-
+// const menuList = ref<type.menu[]>(userInfo.menuList);
+const route = useRoute();
+const onRoutes = computed(() => {
+  return route.path;
+});
 const switchCollapseHanlde = () => {
   if (silder.isCollapse) {
     arrowIcon.value = 'ArrowRightBold';

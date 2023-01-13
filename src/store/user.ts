@@ -22,22 +22,9 @@ function toMakeTree(data: type.menu[], pid: string) {
 export default defineStore('user', {
   state() {
     return {
-      menuList: [],
+      menuList: <type.menu[]>[],
     };
   },
-  //   getters: {
-  //     getUserInfo(state) {
-  //       const userInfo = tools.getLocalStorage('userInfo');
-  //       if (state.menuList) {
-  //         return state.menuList;
-  //       } else if (userInfo) {
-  //         state.menuList = userInfo.list;
-  //         return state.menuList;
-  //       } else {
-  //         return null;
-  //       }
-  //     },
-  //   },
   actions: {
     checkLogin() {
       const userInfo = tools.getLocalStorage('userInfo');
@@ -67,26 +54,6 @@ export default defineStore('user', {
           .catch(() => {
             reject();
           });
-        // debugger;
-        // const userInfo = tools.getLocalStorage('userInfo');
-
-        // if (userInfo) {
-        //   this.menuList = toMakeTree(userInfo.list, '0');
-        //   addRouter(userInfo.list);
-        //   resolve(this.menuList);
-        // } else {
-        //   getMenuList(params)
-        //     .then((res) => {
-        //       const result = res.result;
-        //       this.menuList = toMakeTree(result.list, '0');
-        //       tools.setLocalStorage('userInfo', result);
-        //       addRouter(userInfo.list);
-        //       resolve(this.menuList);
-        //     })
-        //     .catch(() => {
-        //       reject();
-        //     });
-        // }
       });
     },
   },
