@@ -6,10 +6,10 @@
       {
         "id": "1",
         "parentId": "0",
-        "sort": "1",
+        "sort": "2",
         "path": "",
         "name": "系统管理",
-        "icon": "message"
+        "icon": "Message"
       },
       {
         "id": "2",
@@ -24,6 +24,14 @@
         "sort": "1",
         "path": "/system/roleList",
         "name": "角色列表"
+      },
+      {
+        "id": "4",
+        "parentId": "0",
+        "icon": "Compass",
+        "path": "/overview",
+        "name": "概况",
+        "sort": "1"
       }
     ]
   }

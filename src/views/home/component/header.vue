@@ -26,11 +26,14 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
+import user from '@store/user';
+
+const userInfo = user();
 const router = useRouter();
 
 const handleCommand = (command: string) => {
   if (command == 'loginout') {
-    tools.clearLocalStorage();
+    userInfo.loginOut();
     router.push('/login');
   }
 };

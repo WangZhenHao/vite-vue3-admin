@@ -26,6 +26,14 @@ const map: Mapkey = {
       title: '角色列表',
     },
   },
+  '/overview': {
+    path: '/overview',
+    name: 'overview',
+    component: () => import('@views/overview/index.vue'),
+    meta: {
+      title: '概况',
+    },
+  },
 };
 
 export default map;

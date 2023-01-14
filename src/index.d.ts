@@ -3,3 +3,5 @@ declare namespace tools {
   function clearLocalStorage(key?: string): void;
   function getLocalStorage(key: string): any;
 }
+
+// declare function test1<T>(arr: T, name1: keyof T, name2: keyof T): T;

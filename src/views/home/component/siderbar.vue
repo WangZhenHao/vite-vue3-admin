@@ -14,25 +14,38 @@
         router
         text-color="#bfcbd9"
       >
-        <el-sub-menu
-          :index="index"
+        <template
           :key="item.id"
           v-for="(item, index) in userInfo.menuList"
         >
-          <template #title>
+          <!-- 含有子分类的 -->
+          <el-sub-menu
+            :index="index"
+            v-if="!item.path && item.child.length"
+          >
+            <template #title>
+              <el-icon>
+                <component :is="item.icon"></component>
+              </el-icon>
+              <span>{{ item.name }}</span>
+            </template>
+            <el-menu-item
+              :index="sub.path"
+              :key="sub.id"
+              v-for="sub in item.child"
+            >{{ sub.name }}</el-menu-item>
+          </el-sub-menu>
+          <!-- 不含有子分类 -->
+          <el-menu-item
+            :index="item.path"
+            v-else
+          >
             <el-icon>
               <component :is="item.icon"></component>
             </el-icon>
             <span>{{ item.name }}</span>
-          </template>
-          <el-menu-item
-            :index="sub.path"
-            :key="sub.id"
-            v-for="sub in item.child"
-          >{{ sub.name }}</el-menu-item>
-          <!-- <el-menu-item index="1-2">Option 2</el-menu-item>
-          <el-menu-item index="1-3">Option 3</el-menu-item>-->
-        </el-sub-menu>
+          </el-menu-item>
+        </template>
       </el-menu>
     </el-scrollbar>
 
@@ -47,7 +60,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import useSilder from '@store/siderbar';
 import user from '@store/user';
 import { useRoute } from 'vue-router';
@@ -60,6 +73,9 @@ const arrowIcon = ref('ArrowLeftBold');
 const route = useRoute();
 const onRoutes = computed(() => {
   return route.path;
+});
+onMounted(() => {
+  console.log(userInfo.menuList);
 });
 const switchCollapseHanlde = () => {
   if (silder.isCollapse) {
