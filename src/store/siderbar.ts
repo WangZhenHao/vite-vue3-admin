@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { RouteLocationNormalized } from 'vue-router';
+import type { RouteLocationNormalized } from 'vue-router';
 
 interface ListItem {
   name: string;
@@ -12,6 +12,7 @@ export default defineStore('useSidebarStore', {
     return {
       isCollapse: false,
       tabs: <ListItem[]>[],
+      currentRoute: <RouteLocationNormalized>{},
     };
   },
   actions: {
@@ -19,6 +20,7 @@ export default defineStore('useSidebarStore', {
       this.isCollapse = !this.isCollapse;
     },
     addTabs(page: RouteLocationNormalized) {
+      this.currentRoute = page;
       if (page.name && page.meta.title) {
         const index: number = this.tabs.findIndex((item: ListItem) => item.name === page.name);
 
@@ -37,7 +39,6 @@ export default defineStore('useSidebarStore', {
     },
     removeTabs(index: number) {
       // const index = this.tabs.findIndex((item: ListItem) => item.fullPath === page.fullPath);
-
       this.tabs.splice(index, 1);
     },
   },

@@ -19,15 +19,16 @@ function toMakeTree(data: type.menu[], pid: string) {
   return listSort(arr, 'sort', 'child');
 }
 
-function listSort(arr: type.menu[], sortName: keyof type.menu, twoSortName: keyof type.menu = 'child'): type.menu[] {
+function listSort(arr: type.menu[], sortName: keyof type.menu, twoSortName: keyof type.menu = 'child') {
   let tem = null,
     len = arr.length;
   for (let i = 0; i < len; i++) {
-    if (arr[i][twoSortName] && arr[i][twoSortName].length) {
-      listSort(arr[i][twoSortName], sortName);
+    const item = arr[i][twoSortName];
+    if (item && item.length) {
+      listSort(item as type.menu[], sortName);
     }
     for (let j = 0; j < len - 1; j++) {
-      if (arr[j][sortName] > arr[j + 1][sortName]) {
+      if ((arr[j][sortName] as string | number) > (arr[j + 1][sortName] as string | number)) {
         tem = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = tem;
@@ -37,15 +38,16 @@ function listSort(arr: type.menu[], sortName: keyof type.menu, twoSortName: keyo
   return arr;
 }
 
-// function test<T>(arr: T[], sortName: keyof T, twoSortName: keyof T) {
+// function test<T>(arr: T[], sortName: keyof T, twoSortName: keyof T = 'child') {
 //   let tem = null,
 //     len = arr.length;
 //   for (let i = 0; i < len; i++) {
-//     if (arr[i][twoSortName] && arr[i][twoSortName].length) {
-//       test(arr[i][twoSortName], sortName, twoSortName);
+//     const item = arr[i][twoSortName];
+//     if (item && item.length) {
+//       listSort(item as T[], sortName);
 //     }
 //     for (let j = 0; j < len - 1; j++) {
-//       if (arr[j][sortName] > arr[j + 1][sortName]) {
+//       if ((arr[j][sortName] as string | number) > (arr[j + 1][sortName] as string | number)) {
 //         tem = arr[j];
 //         arr[j] = arr[j + 1];
 //         arr[j + 1] = tem;

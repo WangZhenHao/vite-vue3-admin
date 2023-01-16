@@ -14,5 +14,5 @@ export interface menu {
   path: string;
   name: string;
   icon?: string;
-  child?: any;
+  child?: menu[];
 }

@@ -21,7 +21,7 @@
           <!-- 含有子分类的 -->
           <el-sub-menu
             :index="index"
-            v-if="!item.path && item.child.length"
+            v-if="!item.path && item.child && item.child.length"
           >
             <template #title>
               <el-icon>
@@ -63,19 +63,18 @@
 import { ref, computed, onMounted } from 'vue';
 import useSilder from '@store/siderbar';
 import user from '@store/user';
-import { useRoute } from 'vue-router';
 
 const silder = useSilder();
 const userInfo = user();
 const arrowIcon = ref('ArrowLeftBold');
 
 // const menuList = ref<type.menu[]>(userInfo.menuList);
-const route = useRoute();
 const onRoutes = computed(() => {
-  return route.path;
+  return silder.currentRoute.path;
 });
 onMounted(() => {
-  console.log(userInfo.menuList);
+  // const route = useRoute();
+  // console.log(route.fullPath);
 });
 const switchCollapseHanlde = () => {
   if (silder.isCollapse) {
