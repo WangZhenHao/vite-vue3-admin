@@ -1,7 +1,11 @@
-import { setLocalStorage, clearLocalStorage, getLocalStorage } from './utils';
+import { setLocalStorage, clearLocalStorage, getLocalStorage } from "./utils";
 
-window.tools = {
-  setLocalStorage: setLocalStorage,
-  clearLocalStorage: clearLocalStorage,
-  getLocalStorage: getLocalStorage,
-};
+const tools = {
+    setLocalStorage: setLocalStorage,
+    clearLocalStorage: clearLocalStorage,
+    getLocalStorage: getLocalStorage,
+} as const;
+
+export type typeTools = typeof tools;
+
+window.$tools = tools;

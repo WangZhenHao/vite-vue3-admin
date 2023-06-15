@@ -9,7 +9,7 @@ import '@css/common.css';
 import '@css/resetElment.css';
 import globalProperties from '@js/globalProperties';
 import '@js/globalFn';
-import * as ElementPlusIconsVue from '@element-plus/icons-vue';
+import globalComponents from '@js/globalComponents';
 
 const app = createApp(App);
 
@@ -18,9 +18,5 @@ app.use(ElementPlus);
 app.use(createPinia());
 app.mount('#app');
 globalProperties(app);
-
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  app.component(key, component);
-}
-
-console.log(import.meta.env);
+globalComponents(app);
+// console.log(import.meta.env);

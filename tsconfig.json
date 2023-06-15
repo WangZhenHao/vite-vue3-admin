@@ -1,30 +1,31 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": true,
-    "jsx": "preserve",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
-    "noEmit": true,
-    "noImplicitThis": false,
-    "types": ["node"],
-    "baseUrl": "./",
-    "paths": {
-      "@views/*": ["./src/views/*"],
-      "@router/*": ["./src/router/*"],
-      "@js/*": ["src/assets/js/*"],
-      "@css/*": ["src/assets/css/*"],
-      "@img/*": ["src/assets/img/*"],
-      "@api/*": ["src/api/*"],
-      "@store/*": ["src/store/*"]
-    }
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "jsx": "preserve",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "lib": ["ESNext", "DOM"],
+        "skipLibCheck": true,
+        "noEmit": true,
+        "noImplicitThis": false,
+        "allowJs": false,
+        "types": ["node"],
+        "baseUrl": "./",
+        "paths": {
+            "@views/*": ["./src/views/*"],
+            "@router/*": ["./src/router/*"],
+            "@js/*": ["src/assets/js/*"],
+            "@css/*": ["src/assets/css/*"],
+            "@img/*": ["src/assets/img/*"],
+            "@api/*": ["src/api/*"],
+            "@store/*": ["src/store/*"]
+        }
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,71 @@
+{
+  "code": 0,
+  "page": {
+    "pageNum": 1,
+    "pageSize": 15,
+    "pages": 4,
+    "total": 51
+  },
+  "result": [
+    {
+      "code": "yyrl",
+      "description": "",
+      "id": "1583051562667544578",
+      "name": "巡店（运营人力）"
+    },
+    {
+      "code": "xdpp",
+      "description": "",
+      "id": "1583051461375102977",
+      "name": "巡店（品牌文化）"
+    },
+    {
+      "code": "jhxj",
+      "description": "",
+      "id": "1583051127600779266",
+      "name": "稽核巡检"
+    },
+    {
+      "code": "CP",
+      "description": "新入职产品的权限",
+      "id": "1536950648457453569",
+      "name": "入职产品"
+    },
+    {
+      "code": "YYZFGJ",
+      "description": "",
+      "id": "1534458769930387457",
+      "name": "运营（植发跟进）"
+    },
+    {
+      "code": "YYFW",
+      "description": "",
+      "id": "1534375309269700610",
+      "name": "运营（服务）"
+    },
+    {
+      "code": "zb",
+      "description": "郑海松",
+      "id": "1527951106616573953",
+      "name": "查看战报"
+    },
+    {
+      "code": "XYJY",
+      "description": "",
+      "id": "1524687019549179906",
+      "name": "学院（教育）"
+    },
+    {
+      "code": "YYBX",
+      "description": "",
+      "id": "1522479998960726018",
+      "name": "运营（变现）"
+    },
+    {
+      "code": "YYZS",
+      "description": "",
+      "id": "1519248527685365762",
+      "name": "运营（招商）"
+    }
+  ]
+}

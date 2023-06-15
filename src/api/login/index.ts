@@ -1,6 +1,7 @@
-import { ipost, iget } from '@js/axios';
-import * as type from './type';
+import { ipost, iget } from "@js/axios";
 
-export const getMenuList = function (data: type.getMenuListData) {
-  return iget('/data/menuList.json', data);
-};
+export const getMenuList = function (data, option) {
+    return iget("/data/user/getUserList,json.json", data, option);
+} as typeof $api.user.getUserList;
+
+// const typea = $api.user.getUserList
