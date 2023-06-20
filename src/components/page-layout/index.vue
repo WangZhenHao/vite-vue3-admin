@@ -1,38 +1,29 @@
 <template>
-  <div class="page-layout">
-    <div
-      class="page-layout_header"
-      v-if="$slots.header"
-    >
-      <div class="header-block">
-        <slot name="header"></slot>
-      </div>
+    <div class="page-layout">
+        <div class="page-layout_header" v-if="$slots.header">
+            <div class="header-block">
+                <slot name="header"></slot>
+            </div>
 
-      <!-- <div class="rightbtn">
+            <!-- <div class="rightbtn">
                 <slot name="rightbtn"></slot>
       </div>-->
-    </div>
-    <div
-      class="page-layout_table"
-      v-if="$slots.table"
-    >
-      <slot name="table"></slot>
-    </div>
-    <!-- <div v-if="$slots.default" class="page-layout_main">
+        </div>
+        <div class="page-layout_table" v-if="$slots.table">
+            <slot name="table"></slot>
+        </div>
+        <!-- <div v-if="$slots.default" class="page-layout_main">
             <slot></slot>
     </div>-->
-    <div
-      class="page-layout_footer"
-      v-if="$slots.footer"
-    >
-      <slot name="footer"></slot>
+        <div class="page-layout_footer" v-if="$slots.footer">
+            <slot name="footer"></slot>
+        </div>
     </div>
-  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
-  name: 'pageLayout',
+    name: 'pageLayout',
 });
 /**
  
@@ -67,48 +58,48 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .page-layout {
-  background: #fff;
-  display: -webkit-box;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 100%;
-  flex-basis: auto;
-  box-sizing: border-box;
-  padding: 0 10px 0;
-  border-radius: 6px;
-
-  .page-layout_header {
+    background: #fff;
+    display: -webkit-box;
     display: flex;
-    .header-block {
-      padding-top: 24px;
-      flex: 1;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    flex-basis: auto;
+    box-sizing: border-box;
+    padding: 0 10px 0;
+    border-radius: 6px;
+
+    .page-layout_header {
+        display: flex;
+        .header-block {
+            padding-top: 24px;
+            flex: 1;
+        }
+
+        // .rightbtn {
+        //     padding: 24px 0;
+        //     display: flex;
+        //     align-items: flex-end;
+        //     justify-content: flex-end;
+        // }
     }
 
-    // .rightbtn {
-    //     padding: 24px 0;
-    //     display: flex;
-    //     align-items: flex-end;
-    //     justify-content: flex-end;
+    .page-layout_table,
+    .page-layout_main {
+        // margin-top: 10px;
+        // display: flex;
+        overflow: hidden;
+        // flex-direction: column;
+        flex: 1;
+    }
+    // ::v-deep .tabel-page-container .tabel-body-wrap {
+    //     height: calc(100% - 96px);
+    //     overflow: hidden;
     // }
-  }
-
-  .page-layout_table,
-  .page-layout_main {
-    // margin-top: 10px;
-    // display: flex;
-    overflow: hidden;
-    // flex-direction: column;
-    flex: 1;
-  }
-  // ::v-deep .tabel-page-container .tabel-body-wrap {
-  //     height: calc(100% - 96px);
-  //     overflow: hidden;
-  // }
-  .page-layout_footer {
-    height: 28px;
-    padding-bottom: 6px;
-    padding-top: 6px;
-  }
+    .page-layout_footer {
+        height: 28px;
+        padding-bottom: 6px;
+        padding-top: 6px;
+    }
 }
 </style>

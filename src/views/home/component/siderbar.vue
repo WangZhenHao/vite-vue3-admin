@@ -52,13 +52,13 @@
     </div>
 </template>
 <script setup lang="ts">
-import { ref, computed, onMounted } from "vue";
-import useSilder from "@store/siderbar";
-import user from "@store/user";
+import { ref, computed, onMounted } from 'vue';
+import useSilder from '@store/siderbar';
+import user from '@store/user';
 
 const silder = useSilder();
 const userInfo = user();
-const arrowIcon = ref("ArrowLeftBold");
+const arrowIcon = ref('ArrowLeftBold');
 
 // const menuList = ref<type.menu[]>(userInfo.menuList);
 const onRoutes = computed(() => {
@@ -70,9 +70,9 @@ onMounted(() => {
 });
 const switchCollapseHanlde = () => {
     if (silder.isCollapse) {
-        arrowIcon.value = "ArrowRightBold";
+        arrowIcon.value = 'ArrowRightBold';
     } else {
-        arrowIcon.value = "ArrowLeftBold";
+        arrowIcon.value = 'ArrowLeftBold';
     }
 
     silder.switchCollapce();

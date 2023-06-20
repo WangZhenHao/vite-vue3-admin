@@ -2,12 +2,12 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "tsc --noEmit &&  vue-tsc --noEmit && vite --mode development",
     "build": "tsc --noEmit &&  vue-tsc --noEmit && vite build --mode production",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "format": "prettier --write ./src"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -25,6 +25,7 @@
     "@vitejs/plugin-vue": "^3.2.0",
     "eslint": "^8.28.0",
     "eslint-plugin-vue": "^9.8.0",
+    "prettier": "2.8.8",
     "sass": "^1.56.1",
     "typescript": "^4.6.4",
     "vite": "^3.2.3",

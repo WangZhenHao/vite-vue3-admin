@@ -2,14 +2,14 @@ import { request, CancelToken } from './request';
 import type { optionsParams, apiServer, respoonceRse } from './axios.type';
 
 const $apiServer: apiServer = {
-  baseURL: `${import.meta.env.VITE_API}`,
+    baseURL: `${import.meta.env.VITE_API}`,
 };
 
 function isAbsoluteURL(url: string) {
-  // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
-  // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
-  // by any combination of letters, digits, plus, period, or hyphen.
-  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+    // A URL is considered absolute if it begins with "<scheme>://" or "//" (protocol-relative URL).
+    // RFC 3986 defines scheme name as a sequence of characters beginning with a letter and followed
+    // by any combination of letters, digits, plus, period, or hyphen.
+    return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 }
 
 /**
@@ -18,14 +18,18 @@ function isAbsoluteURL(url: string) {
  * @param params
  * @param options
  */
-function iget(url: string, params?: any, options: optionsParams = {}): Promise<respoonceRse> {
-  const target = options.target || 'baseURL';
-  const origin = $apiServer[target] || '';
-  options['method'] = 'GET';
-  options['action'] = 'json';
-  url = isAbsoluteURL(url) ? url : origin + url;
+function iget(
+    url: string,
+    params?: any,
+    options: optionsParams = {}
+): Promise<respoonceRse> {
+    const target = options.target || 'baseURL';
+    const origin = $apiServer[target] || '';
+    options['method'] = 'GET';
+    options['action'] = 'json';
+    url = isAbsoluteURL(url) ? url : origin + url;
 
-  return request(url, params, options);
+    return request(url, params, options);
 }
 
 /**
@@ -34,15 +38,19 @@ function iget(url: string, params?: any, options: optionsParams = {}): Promise<r
  * @param params
  * @param options
  */
-function ipost(url: string, params?: any, options: optionsParams = {}): Promise<respoonceRse> {
-  const target = options.target || 'baseURL';
-  const origin = $apiServer[target] || '';
+function ipost(
+    url: string,
+    params?: any,
+    options: optionsParams = {}
+): Promise<respoonceRse> {
+    const target = options.target || 'baseURL';
+    const origin = $apiServer[target] || '';
 
-  options['method'] = 'POST';
-  options['action'] = options['action'] || 'json';
-  url = isAbsoluteURL(url) ? url : origin + url;
+    options['method'] = 'POST';
+    options['action'] = options['action'] || 'json';
+    url = isAbsoluteURL(url) ? url : origin + url;
 
-  return request(url, params, options);
+    return request(url, params, options);
 }
 
 export { iget, ipost, CancelToken };

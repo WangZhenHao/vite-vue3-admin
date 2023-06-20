@@ -16,8 +16,8 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { onBeforeRouteUpdate, useRoute } from "vue-router";
-import useSilder from "@store/siderbar";
+import { onBeforeRouteUpdate, useRoute } from 'vue-router';
+import useSilder from '@store/siderbar';
 
 const route = useRoute();
 const silder = useSilder();

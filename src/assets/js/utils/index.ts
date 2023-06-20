@@ -4,7 +4,7 @@
  * @param {[type]} data [description]
  */
 export function dateToTimestamp(data: string) {
-    return Date.parse(data.replace(/-/g, "/"));
+    return Date.parse(data.replace(/-/g, '/'));
 }
 /**
  * Unix时间戳转成时间
@@ -31,28 +31,28 @@ export function timestampToDate(timestamp: string, format: string) {
     const str = format.replace(
         /y+|m+|d+|h+|s+/gi,
         function (w: string): string {
-            if (w == "yy" || w == "YY" || w == "y" || w == "Y") {
+            if (w == 'yy' || w == 'YY' || w == 'y' || w == 'Y') {
                 return year.toString().substring(2);
-            } else if (w == "yyyy" || w == "YYYY") {
+            } else if (w == 'yyyy' || w == 'YYYY') {
                 return String(year);
-            } else if (w == "MM") {
-                return String(month >= 10 ? month : "0" + month);
-            } else if (w == "M") {
+            } else if (w == 'MM') {
+                return String(month >= 10 ? month : '0' + month);
+            } else if (w == 'M') {
                 return String(month);
-            } else if (w == "DD" || w == "dd") {
-                return String(day >= 10 ? day : "0" + day);
-            } else if (w == "D" || w == "d") {
+            } else if (w == 'DD' || w == 'dd') {
+                return String(day >= 10 ? day : '0' + day);
+            } else if (w == 'D' || w == 'd') {
                 return String(day);
-            } else if (w == "HH" || w == "hh") {
-                return String(hour >= 10 ? hour : "0" + hour);
-            } else if (w == "H" || w == "h") {
+            } else if (w == 'HH' || w == 'hh') {
+                return String(hour >= 10 ? hour : '0' + hour);
+            } else if (w == 'H' || w == 'h') {
                 return String(hour);
-            } else if (w == "mm") {
-                return String(minute >= 10 ? minute : "0" + minute);
-            } else if (w == "m") {
+            } else if (w == 'mm') {
+                return String(minute >= 10 ? minute : '0' + minute);
+            } else if (w == 'm') {
                 return String(minute);
-            } else if (w == "ss" || w == "s") {
-                return String(second >= 10 ? second : "0" + second);
+            } else if (w == 'ss' || w == 's') {
+                return String(second >= 10 ? second : '0' + second);
             } else {
                 return w;
             }
@@ -151,7 +151,7 @@ export function setLocalStorage(
     json[key] = value;
     if (expires) {
         const timestamp = Math.floor(+new Date() / 1000) + expires;
-        json["expires"] = timestamp;
+        json['expires'] = timestamp;
     }
 
     localStorage.setItem(key, JSON.stringify(json));

@@ -9,10 +9,10 @@
     </div>
 </template>
 <script lang="ts" setup>
-import cHeader from "./component/header.vue";
-import cSiderbar from "./component/siderbar.vue";
-import cTags from "./component/tags.vue";
-import useSilder from "@store/siderbar";
+import cHeader from './component/header.vue';
+import cSiderbar from './component/siderbar.vue';
+import cTags from './component/tags.vue';
+import useSilder from '@store/siderbar';
 const silder = useSilder();
 </script>
 <style lang="scss" scoped>

@@ -1,4 +1,4 @@
-import { setLocalStorage, clearLocalStorage, getLocalStorage } from "./utils";
+import { setLocalStorage, clearLocalStorage, getLocalStorage } from './utils';
 
 const tools = {
     setLocalStorage: setLocalStorage,

@@ -6,6 +6,16 @@
     },
     // 保存的时候自动格式化
     "editor.formatOnSave": true,
-    // 默认格式化工具选择prettier
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
+     "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+     },
 }

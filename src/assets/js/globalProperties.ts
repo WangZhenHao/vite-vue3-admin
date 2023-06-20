@@ -14,24 +14,24 @@
 import type { App } from 'vue';
 
 function globalProperties(app: App) {
-  app.config.globalProperties.$filters = {
-    filterMoeny(money: string, num = 2) {
-      if (money) {
-        return parseFloat(money).toFixed(num);
-      }
+    app.config.globalProperties.$filters = {
+        filterMoeny(money: string, num = 2) {
+            if (money) {
+                return parseFloat(money).toFixed(num);
+            }
 
-      return money;
-    },
-  };
+            return money;
+        },
+    };
 }
 
 declare module '@vue/runtime-core' {
-  interface ComponentCustomProperties {
-    $filters: {
-      //   filterTime: (time: number, format?: string) => string;
-      filterMoeny: (money: string, num?: number) => string;
-    };
-  }
+    interface ComponentCustomProperties {
+        $filters: {
+            //   filterTime: (time: number, format?: string) => string;
+            filterMoeny: (money: string, num?: number) => string;
+        };
+    }
 }
 
 export default globalProperties;

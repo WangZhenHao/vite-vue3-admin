@@ -1,3 +1,3 @@
 export interface getRoleListData {
-  uid: string;
+    uid: string;
 }
