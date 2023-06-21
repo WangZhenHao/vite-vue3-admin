@@ -3,8 +3,11 @@ import { getMenuList } from '@api/login';
 import addRouter from '@router/addRouter';
 
 type getMenuListPrams = Parameters<typeof getMenuList>[0];
+type menuList = InferArray<
+    Awaited<ReturnType<typeof getMenuList>>['result']['list']
+>;
 
-function toMakeTree(data, pid: string) {
+function toMakeTree(data: any, pid: string) {
     let arr = [];
     pid = pid || '0';
     for (let item of data) {
@@ -20,12 +23,14 @@ function toMakeTree(data, pid: string) {
     return listSort(arr, 'sort', 'child');
 }
 
+// @ts-ignore
 function listSort(arr, sortName, twoSortName) {
     let tem = null,
         len = arr.length;
     for (let i = 0; i < len; i++) {
         const item = arr[i][twoSortName];
         if (item && item.length) {
+            // @ts-ignore
             listSort(item, sortName);
         }
         for (let j = 0; j < len - 1; j++) {
@@ -45,7 +50,7 @@ function listSort(arr, sortName, twoSortName) {
 export default defineStore('user', {
     state() {
         return {
-            menuList: <type.menu[]>[],
+            menuList: <menuList[]>[],
         };
     },
     actions: {
@@ -72,11 +77,14 @@ export default defineStore('user', {
                 getMenuList(params)
                     .then((res) => {
                         const result = res.result;
+                        debugger;
                         $tools.setLocalStorage('userInfo', result);
                         // console.log(result.)
-                        // this.menuList = toMakeTree(result.list, "0");
-                        // addRouter(result.list);
-                        // resolve(this.menuList);
+                        //@ts-ignore
+                        this.menuList = toMakeTree(result.list, '0');
+                        //@ts-ignore
+                        addRouter(this.menuList);
+                        resolve(this.menuList);
                     })
                     .catch(() => {
                         reject();

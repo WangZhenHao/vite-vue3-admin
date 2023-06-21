@@ -14,7 +14,6 @@
         "noEmit": true,
         "noImplicitThis": false,
         "allowJs": false,
-        "types": ["node"],
         "baseUrl": "./",
         "paths": {
             "@views/*": ["./src/views/*"],
@@ -26,6 +25,11 @@
             "@store/*": ["src/store/*"]
         }
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "include": [
+        "src/**/*.ts",
+        "src/type/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue"
+    ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

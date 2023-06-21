@@ -44,12 +44,12 @@
     </div>
 </template>
 <script lang="ts" setup>
-import * as typeLogin from '@api/login/type';
 import { ref, reactive } from 'vue';
 import type { FormInstance, FormRules } from 'element-plus';
 import { User, Lock } from '@element-plus/icons-vue';
 import user from '@store/user';
 import { useRouter } from 'vue-router';
+import { getMenuList } from '@api/login';
 
 const userStore = user();
 const router = useRouter();
@@ -65,8 +65,9 @@ const rules: FormRules = {
     password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 };
 const loading = ref(false);
+type getMenuListPrams = Parameters<typeof getMenuList>[0];
 
-let form = reactive<typeLogin.getMenuListData>({
+let form = reactive<getMenuListPrams>({
     username: 'admin',
     password: '123456',
 });
@@ -78,7 +79,7 @@ const submitForm = (loginForm: FormInstance | undefined) => {
     loginForm.validate((valid) => {
         if (valid) {
             userStore.login(form).then(() => {
-                router.replace({ path: '/system/roleList' });
+                router.replace({ name: 'overview' });
             });
         }
     });

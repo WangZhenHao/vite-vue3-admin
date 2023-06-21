@@ -9,6 +9,8 @@ function addRouter(list: type.menu[]) {
             router.addRoute('Home', comp);
         }
     }
+
+    console.log(router);
 }
 
 export default addRouter;

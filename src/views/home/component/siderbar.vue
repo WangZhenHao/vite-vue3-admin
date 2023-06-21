@@ -22,7 +22,10 @@
                     >
                         <template #title>
                             <el-icon>
-                                <component :is="item.icon"></component>
+                                <component
+                                    v-if="item.icon"
+                                    :is="item.icon"
+                                ></component>
                             </el-icon>
                             <span>{{ item.name }}</span>
                         </template>
@@ -36,7 +39,10 @@
                     <!-- 不含有子分类 -->
                     <el-menu-item :index="item.path" v-else>
                         <el-icon>
-                            <component :is="item.icon"></component>
+                            <component
+                                v-if="item.icon"
+                                :is="item.icon"
+                            ></component>
                         </el-icon>
                         <span>{{ item.name }}</span>
                     </el-menu-item>
@@ -55,6 +61,8 @@
 import { ref, computed, onMounted } from 'vue';
 import useSilder from '@store/siderbar';
 import user from '@store/user';
+import { getMenuList } from '@api/login';
+type menuList = InferArray<Awaited<ReturnType<typeof getMenuList>>['result']>;
 
 const silder = useSilder();
 const userInfo = user();

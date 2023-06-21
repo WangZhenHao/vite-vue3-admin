@@ -12,15 +12,16 @@ const map = {
 };
 
 const routes: RouteRecordRaw[] = [
-    //   {
-    //     path: '/',
-    //     redirect: '/home',
-    //   },
+    {
+        path: '/',
+        redirect: '/overview',
+    },
     {
         path: '/home',
         name: 'Home',
         component: Home,
         children: [],
+        redirect: '/overview',
     },
     {
         path: '/login',
