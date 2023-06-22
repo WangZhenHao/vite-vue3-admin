@@ -77,13 +77,11 @@ export default defineStore('user', {
                 getMenuList(params)
                     .then((res) => {
                         const result = res.result;
-                        debugger;
                         $tools.setLocalStorage('userInfo', result);
                         // console.log(result.)
                         //@ts-ignore
                         this.menuList = toMakeTree(result.list, '0');
-                        //@ts-ignore
-                        addRouter(this.menuList);
+                        addRouter(result.list);
                         resolve(this.menuList);
                     })
                     .catch(() => {

@@ -1,0 +1,7 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+/* .el-button--primary {
+    background-color: var(--el-button-bg-color);
+} */

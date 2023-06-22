@@ -50,8 +50,8 @@
             </el-menu>
         </el-scrollbar>
 
-        <div @click="switchCollapseHanlde" class="icon-arrow abs">
-            <el-icon class="color-f">
+        <div @click="switchCollapseHanlde" class="icon-arrow">
+            <el-icon class="text-color-f">
                 <component :is="arrowIcon"></component>
             </el-icon>
         </div>

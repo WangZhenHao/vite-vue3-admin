@@ -1,7 +1,7 @@
 <template>
-    <div class="login-wrap abs">
+    <div class="login-wrap absolute">
         <div class="ms-login">
-            <div class="text-center color-6 m-b-10">后台管理系统</div>
+            <div class="text-center text-color-3 mb-10px">后台管理系统</div>
             <el-form
                 :model="form"
                 :rules="rules"
@@ -32,7 +32,7 @@
                     <el-button
                         :loading="loading"
                         @click="submitForm(loginFormRef)"
-                        class="width-100"
+                        class="w-full"
                         size="large"
                         type="primary"
                         >登录</el-button

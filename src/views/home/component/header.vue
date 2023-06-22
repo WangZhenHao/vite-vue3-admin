@@ -1,9 +1,9 @@
 <template>
-    <div class="header-wrap flex-box justify-s-b items-center">
+    <div class="header-wrap flex justify-between items-center">
         <div class="left-wrap">后台管理系统</div>
         <div class="right-wrap">
             <el-dropdown @command="handleCommand">
-                <div class="flex-box items-center font-14 color-f">
+                <div class="flex items-center text-14px text-color-f">
                     <img class="img-block" src="@img/admin.png" />
                     <span class="p-l-10">管理员</span>
                     <el-icon class="el-icon--right">

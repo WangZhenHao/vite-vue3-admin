@@ -7,6 +7,7 @@ import { createPinia } from 'pinia';
 import 'element-plus/dist/index.css';
 import '@css/common.css';
 import '@css/resetElment.css';
+import './style.css';
 import globalProperties from '@js/globalProperties';
 import '@js/globalFn';
 import globalComponents from '@js/globalComponents';

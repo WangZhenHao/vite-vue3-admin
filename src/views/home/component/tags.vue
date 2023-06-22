@@ -1,14 +1,16 @@
 <template>
-    <div class="tabs-wrap flex-box width-100 items-center color-6">
+    <div class="tabs-wrap flex w-full items-center">
         <div
             :class="{ active: isActive(item.fullPath) }"
             :key="item.fullPath"
-            class="item flex-box items-center"
+            class="item flex items-center"
             v-for="(item, index) in silder.tabs"
         >
-            <router-link :to="item.fullPath" class="tags-li-title">{{
-                item.title
-            }}</router-link>
+            <router-link
+                :to="item.fullPath"
+                class="tags-li-title text-color-6"
+                >{{ item.title }}</router-link
+            >
             <el-icon @click="closeTagsHanlde(index)">
                 <Close class="font-b" />
             </el-icon>

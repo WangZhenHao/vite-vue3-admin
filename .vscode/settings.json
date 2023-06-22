@@ -8,14 +8,15 @@
     "editor.formatOnSave": true,
     "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-     },
-     "[html]": {
+    },
+    "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-     },
-     "[javascript]": {
+    },
+    "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-     },
-     "[typescript]": {
+    },
+    "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-     },
+    },
+    "css.lint.unknownAtRules": "ignore"
 }
