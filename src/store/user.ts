@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia';
-import { getMenuList } from '@api/login';
+import { userLoginIn } from '@api/login';
 import addRouter from '@router/addRouter';
 
-type getMenuListPrams = Parameters<typeof getMenuList>[0];
+type userLoginInPrams = Parameters<typeof userLoginIn>[0];
 type menuList = InferArray<
-    Awaited<ReturnType<typeof getMenuList>>['result']['list']
+    Awaited<ReturnType<typeof userLoginIn>>['result']['list']
 >;
 
 function toMakeTree(data: any, pid: string) {
@@ -72,9 +72,9 @@ export default defineStore('user', {
                 }
             });
         },
-        login(params: getMenuListPrams) {
+        login(params: userLoginInPrams) {
             return new Promise((resolve, reject) => {
-                getMenuList(params)
+                userLoginIn(params)
                     .then((res) => {
                         const result = res.result;
                         $tools.setLocalStorage('userInfo', result);

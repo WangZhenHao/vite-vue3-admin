@@ -49,7 +49,7 @@ import type { FormInstance, FormRules } from 'element-plus';
 import { User, Lock } from '@element-plus/icons-vue';
 import user from '@store/user';
 import { useRouter } from 'vue-router';
-import { getMenuList } from '@api/login';
+import { userLoginIn } from '@api/login';
 
 const userStore = user();
 const router = useRouter();
@@ -65,9 +65,9 @@ const rules: FormRules = {
     password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
 };
 const loading = ref(false);
-type getMenuListPrams = Parameters<typeof getMenuList>[0];
+type userLoginInPrams = Parameters<typeof userLoginIn>[0];
 
-let form = reactive<getMenuListPrams>({
+let form = reactive<userLoginInPrams>({
     username: 'admin',
     password: '123456',
 });

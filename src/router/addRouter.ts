@@ -1,9 +1,9 @@
 // import * as type from '@api/login/type';
 import router from './index';
 import routerMap from './routerMap';
-import { getMenuList } from '@api/login';
+import { userLoginIn } from '@api/login';
 type menuList = InferArray<
-    Awaited<ReturnType<typeof getMenuList>>['result']['list']
+    Awaited<ReturnType<typeof userLoginIn>>['result']['list']
 >;
 
 function addRouter(list: menuList[]) {

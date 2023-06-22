@@ -30,8 +30,23 @@ declare namespace $api.user {
     }
 
     /** [app] 获取物料审批历史记录 http://192.168.1.126:31861/swagger-ui.html#/app45matrl45apprvl45service/getHistoryApprvlsUsingGET */
-    function getUserList(
+    function userLoginIn(
         params: loginParmas,
         option?: any
     ): Promise<ServiceResponse_List_AppMatrlApplyVo__>;
+
+    interface ServiceResponse_List_userLoginInVo__ {
+        /** 返回值/对象/列表 */
+        result: Array<menuList>;
+        /** 返回码 */
+        retCode?: string;
+        /** 返回消息 */
+        retMsg?: string;
+        /**  */
+        success?: boolean;
+    }
+    function getMenuList(
+        params?: any,
+        option?: any
+    ): Promise<ServiceResponse_List_userLoginInVo__>;
 }
