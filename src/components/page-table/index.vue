@@ -1,6 +1,5 @@
 <template>
     <div>sdfsdfs {{ parmas }}</div>
-    <page-table> </page-table>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';

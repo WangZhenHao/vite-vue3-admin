@@ -23,7 +23,8 @@
             "@img/*": ["src/assets/img/*"],
             "@api/*": ["src/api/*"],
             "@store/*": ["src/store/*"]
-        }
+        },
+        "types": ["element-plus/global"]
     },
     "include": [
         "src/**/*.ts",

@@ -23,8 +23,14 @@ const silder = useSilder();
     top: 70px;
     left: 200px;
     transition: left 0.2s linear;
+
     &.content-collapse {
         left: 64px;
+    }
+
+    .content {
+        height: 100%;
+        overflow-y: auto;
     }
 }
 </style>

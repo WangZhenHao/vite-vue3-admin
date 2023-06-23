@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    MTable: typeof import('./../components/m-table/index.vue')['default']
     PageLayout: typeof import('./../components/page-layout/index.vue')['default']
     PageTable: typeof import('./../components/page-table/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

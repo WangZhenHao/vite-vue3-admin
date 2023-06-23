@@ -41,6 +41,8 @@ const isActive = (path: string) => {
     box-shadow: 0 5px 10px rgba(221, 221, 221, 0.3);
     padding: 0 5px;
     font-size: 12px;
+    position: relative;
+    z-index: 4;
     .item {
         height: 23px;
         padding: 0 5px;
