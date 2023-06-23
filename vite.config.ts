@@ -8,6 +8,7 @@ function resolve(src: string) {
 }
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: 'vite-vue3-admin',
     plugins: [
         vue(),
         Components({
