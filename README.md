@@ -4,6 +4,8 @@ vue + typeScript 后台管理
 
 ## 原子 css 类 Tailwind
 
+-   安装 vscode 专用插件：Tailwind CSS IntelliSense
+
 https://tailwindcss.com/docs/installation
 
 ```

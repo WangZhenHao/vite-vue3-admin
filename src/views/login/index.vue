@@ -78,9 +78,16 @@ const submitForm = (loginForm: FormInstance | undefined) => {
 
     loginForm.validate((valid) => {
         if (valid) {
-            userStore.login(form).then(() => {
-                router.replace({ name: 'overview' });
-            });
+            loading.value = true;
+            userStore
+                .login(form)
+                .then(() => {
+                    router.replace({ name: 'overview' });
+                    // loading.value = false;
+                })
+                .catch(() => {
+                    loading.value = false;
+                });
         }
     });
 };
