@@ -1,5 +1,5 @@
 <template>
-    <el-table v-bind="$attr" :data="tableData">
+    <el-table v-bind="$attrs">
         <el-table-column
             v-for="(item, index) in columns"
             v-bind="item"
@@ -13,31 +13,23 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, useSlots, computed } from 'vue';
+import type { TableProps } from 'element-plus/lib/components/table';
+import type { PropType } from 'vue';
 const slots = useSlots();
 
+interface typeProps extends TableProps<any> {
+    columns?: any[];
+}
 const props = defineProps({
     columns: {
-        type: Array,
-        default() {
-            return [];
-        },
-    },
-    tableData: {
-        type: Array,
+        type: Array as PropType<any[]>,
         default() {
             return [];
         },
     },
 });
-// const _tableData = computed(() => {
-//     const arr = [];
-//     props.tableData.forEach((item, index) => {
-//         arr.push({
-//             ...item,
-//             __index: index,
-//         });
-//     });
-//     return arr;
+// const props = withDefaults(defineProps<typeProps>(), {
+//     columns: () => [],
 // });
 onMounted(() => {
     // console.log(props.columns);

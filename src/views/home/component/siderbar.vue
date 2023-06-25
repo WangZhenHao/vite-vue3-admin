@@ -4,7 +4,7 @@
             <el-menu
                 :collapse="silder.isCollapse"
                 :default-active="onRoutes"
-                :default-openeds="[0]"
+                :default-openeds="['0']"
                 active-text-color="#20a0ff"
                 background-color="#324157"
                 class="el-menu-wrap"
@@ -17,7 +17,7 @@
                 >
                     <!-- 含有子分类的 -->
                     <el-sub-menu
-                        :index="index"
+                        :index="String(index)"
                         v-if="!item.path && item.child && item.child.length"
                     >
                         <template #title>

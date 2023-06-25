@@ -1,6 +1,6 @@
 <template>
     <div class="text-cyan-800 font-bold">我的概况</div>
-    <m-table :table-data="tableData" :columns="columns">
+    <m-table :data="tableData" :columns="columns">
         <template #action="scope">
             <el-button>编辑</el-button>
             {{ scope.row.name }}
@@ -51,8 +51,13 @@ const tableData = ref([
         tag: 'Office',
     },
 ]);
-
+const selectHanlde = (detail: any) => {
+    console.log(detail);
+};
 const columns = ref([
+    {
+        type: 'selection',
+    },
     {
         prop: 'date',
         label: '日期',
