@@ -12,27 +12,21 @@
     </el-table>
 </template>
 <script lang="ts" setup>
-import { onMounted, useSlots, computed } from 'vue';
+import { onMounted } from 'vue';
 import type { TableProps } from 'element-plus/lib/components/table';
-import type { PropType } from 'vue';
-const slots = useSlots();
 
 interface typeProps extends TableProps<any> {
     columns?: any[];
 }
-const props = defineProps({
-    columns: {
-        type: Array as PropType<any[]>,
-        default() {
-            return [];
-        },
-    },
+
+const props = withDefaults(defineProps<typeProps>(), {
+    columns: () => [],
+    data: () => [],
+    flexible: false,
+    tableLayout: 'fixed',
 });
-// const props = withDefaults(defineProps<typeProps>(), {
-//     columns: () => [],
-// });
 onMounted(() => {
     // console.log(props.columns);
-    console.log(slots);
+    // console.log(slots);
 });
 </script>
