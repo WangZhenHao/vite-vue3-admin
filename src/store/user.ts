@@ -34,10 +34,7 @@ function listSort(arr, sortName, twoSortName) {
             listSort(item, sortName);
         }
         for (let j = 0; j < len - 1; j++) {
-            if (
-                (arr[j][sortName] as string | number) >
-                (arr[j + 1][sortName] as string | number)
-            ) {
+            if (arr[j][sortName] > arr[j + 1][sortName]) {
                 tem = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = tem;
@@ -78,8 +75,7 @@ export default defineStore('user', {
                     .then((res) => {
                         const result = res.result;
                         $tools.setLocalStorage('userInfo', result);
-                        // console.log(result.)
-                        //@ts-ignore
+
                         this.menuList = toMakeTree(result.list, '0');
                         addRouter(result.list);
                         resolve(this.menuList);

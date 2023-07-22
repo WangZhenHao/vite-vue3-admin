@@ -1,5 +1,7 @@
 # Vue 3 + TypeScript + Vite
 
+在线地址：https://wangzhenhao.github.io/vite-vue3-admin/
+
 vue + typeScript 后台管理
 
 ## 原子 css 类 Tailwind
