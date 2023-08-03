@@ -14,9 +14,10 @@
 <script lang="ts" setup>
 import { onMounted } from 'vue';
 import type { TableProps } from 'element-plus/lib/components/table';
+import type { ColumnProps } from './index.d.ts';
 
 interface typeProps extends TableProps<any> {
-    columns?: any[];
+    columns: ColumnProps[];
 }
 
 const props = withDefaults(defineProps<typeProps>(), {
@@ -24,9 +25,11 @@ const props = withDefaults(defineProps<typeProps>(), {
     data: () => [],
     flexible: false,
     tableLayout: 'fixed',
+    border: true,
 });
+
 onMounted(() => {
-    // console.log(props.columns);
+    console.log(props.data);
     // console.log(slots);
 });
 </script>

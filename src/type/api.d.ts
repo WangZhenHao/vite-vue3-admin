@@ -49,4 +49,24 @@ declare namespace $api.user {
         params?: any,
         option?: any
     ): Promise<ServiceResponse_List_userLoginInVo__>;
+
+    interface roleListResult {
+        code: string;
+        description: string;
+        id: string;
+        name: string;
+    }
+
+    interface roleListResult_InVo__ {
+        /** 返回值/对象/列表 */
+        result: Array<roleListResult>;
+        /** 返回码 */
+        retCode?: string;
+        /** 返回消息 */
+        retMsg?: string;
+        /**  */
+        success?: boolean;
+    }
+
+    function getRoleList(): Promise<roleListResult_InVo__>;
 }
