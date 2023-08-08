@@ -13,7 +13,7 @@ declare namespace $api.user {
         path: string;
         name: string;
         icon?: string;
-        child?: menu[];
+        child?: menuList[];
     }
     interface ServiceResponse_List_AppMatrlApplyVo__ {
         /** 返回值/对象/列表 */

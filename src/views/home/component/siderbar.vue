@@ -61,8 +61,8 @@
 import { ref, computed, onMounted } from 'vue';
 import useSilder from '@store/siderbar';
 import user from '@store/user';
-import { userLoginIn } from '@api/login';
-type menuList = InferArray<Awaited<ReturnType<typeof userLoginIn>>['result']>;
+// import { userLoginIn } from '@api/login';
+// type menuList = Awaited<ReturnType<typeof userLoginIn>>['result']['list'][0];
 
 const silder = useSilder();
 const userInfo = user();

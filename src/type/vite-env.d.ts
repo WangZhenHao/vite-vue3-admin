@@ -8,4 +8,4 @@ declare module '*.vue' {
 
 declare module 'nprogress';
 
-type InferArray<T> = T extends (infer S)[] ? S : never;
+// type InferArray<T> = T extends (infer S)[] ? S : never;

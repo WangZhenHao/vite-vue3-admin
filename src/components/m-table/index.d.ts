@@ -8,4 +8,5 @@ declare type CI<T> = {
 
 export interface ColumnProps extends Partial<TableColumnCtx<any>> {
     slot?: string;
+    // render?: (h, params) => a
 }
