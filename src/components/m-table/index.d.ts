@@ -1,4 +1,4 @@
-import type { VNode } from 'vue';
+import type { VNode, h } from 'vue';
 import type { TableColumnCtx } from 'element-plus/es/components/table/src/table-column/defaults';
 
 declare type CI<T> = {
@@ -8,5 +8,5 @@ declare type CI<T> = {
 
 export interface ColumnProps extends Partial<TableColumnCtx<any>> {
     slot?: string;
-    // render?: (h, params) => a
+    render?: (fn: typeof h, scrope: any) => VNode;
 }

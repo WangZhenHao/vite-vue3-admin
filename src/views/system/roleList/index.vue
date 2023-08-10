@@ -1,11 +1,6 @@
 <template>
     <div>
-        <m-table :data="tableData" :columns="columns">
-            <template #action="scope">
-                <el-button>编辑</el-button>
-                {{ scope.row.name }}
-            </template>
-        </m-table>
+        <m-table :data="tableData" :columns="columns"></m-table>
     </div>
 </template>
 <script lang="ts" setup>
@@ -18,7 +13,6 @@ const columns = ref([
     {
         prop: 'code',
         label: '测试',
-        width: '12',
         align: 'center',
     },
     {
@@ -32,6 +26,13 @@ const columns = ref([
     {
         prop: 'description',
         label: '描述',
+    },
+    {
+        prop: 'action',
+        label: '操作',
+        render: (h: any, scope: any) => {
+            return h('div', null, '测试');
+        },
     },
 ]);
 
