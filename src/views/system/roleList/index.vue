@@ -3,7 +3,7 @@
         <m-table :data="tableData" :columns="columns"></m-table>
     </div>
 </template>
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import { getRoleList } from '@api/system/roleList';
 import { ref } from 'vue';
 
@@ -26,6 +26,13 @@ const columns = ref([
     {
         prop: 'description',
         label: '描述',
+    },
+    {
+        prop: 'description',
+        label: 'tsx',
+        render: () => {
+            return <el-button>操作</el-button>;
+        },
     },
     {
         prop: 'action',

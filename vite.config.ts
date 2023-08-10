@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import Components from 'unplugin-vue-components/vite';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 function resolve(src: string) {
     return path.join(__dirname, src);
@@ -10,6 +11,7 @@ function resolve(src: string) {
 export default defineConfig({
     base: 'vite-vue3-admin',
     plugins: [
+        vueJsx(),
         vue(),
         Components({
             dirs: ['src/components'],
@@ -27,7 +29,7 @@ export default defineConfig({
             '@api': resolve('./src/api'),
             '@router': resolve('./src/router'),
         },
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.ts'],
     },
     server: {
         host: '0.0.0.0',
