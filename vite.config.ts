@@ -14,7 +14,7 @@ export default defineConfig({
         vueJsx(),
         vue(),
         Components({
-            dirs: ['src/components'],
+            dirs: ['src/components/global'],
             dts: 'src/type/components.d.ts',
         }),
     ],

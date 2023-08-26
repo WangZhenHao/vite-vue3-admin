@@ -4,42 +4,29 @@
     </div>
 </template>
 <script lang="tsx" setup>
+import { $component } from '@/type/table';
 import { getRoleList } from '@api/system/roleList';
 import { ref } from 'vue';
 
 type typeList = Awaited<ReturnType<typeof getRoleList>>['result'];
 const tableData = ref<typeList>([]);
-const columns = ref([
+
+const columns = ref<$component.column[]>([
     {
-        prop: 'code',
-        label: '测试',
-        align: 'center',
+        prop: 'id',
+        label: 'id',
+    },
+    {
+        prop: 'name',
+        label: '名称',
     },
     {
         prop: 'code',
         label: '角色代码',
     },
     {
-        prop: 'id',
-        label: 'id',
-    },
-    {
         prop: 'description',
         label: '描述',
-    },
-    {
-        prop: 'description',
-        label: 'tsx',
-        render: () => {
-            return <el-button>操作</el-button>;
-        },
-    },
-    {
-        prop: 'action',
-        label: '操作',
-        render: (h: any, scope: any) => {
-            return h('div', null, '测试');
-        },
     },
 ]);
 

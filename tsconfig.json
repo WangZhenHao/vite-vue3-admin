@@ -16,6 +16,7 @@
         "allowJs": false,
         "baseUrl": "./",
         "paths": {
+            "@/*": ["./src/*"],
             "@views/*": ["./src/views/*"],
             "@router/*": ["./src/router/*"],
             "@js/*": ["src/assets/js/*"],
