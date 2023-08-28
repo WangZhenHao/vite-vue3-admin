@@ -12,7 +12,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
-
+// type a = $component.h;
 const tableData = ref([
     {
         date: '2016-05-03',

@@ -4,7 +4,7 @@
     </div>
 </template>
 <script lang="tsx" setup>
-import { $component } from '@/type/table';
+// import { $component } from '@/type/table';
 import { getRoleList } from '@api/system/roleList';
 import { ref } from 'vue';
 

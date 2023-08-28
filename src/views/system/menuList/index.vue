@@ -2,7 +2,7 @@
     <m-table :data="tableData" :columns="columns"></m-table>
 </template>
 <script setup lang="ts">
-import { $component } from '@/type/table';
+// import { $component } from '@/type/table';
 import { getMenuList } from '@api/login/index';
 import { ref } from 'vue';
 
