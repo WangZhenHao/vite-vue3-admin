@@ -5,5 +5,5 @@
 declare namespace $component {
     export type column =
         import('@/components/global/m-table/index.d.ts').ColumnProps;
-    export type h = import('vue').h;
+    export type h = import('@/components/global/m-table/index.d.ts').renderFn;
 }
