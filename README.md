@@ -27,6 +27,8 @@ vue + typeScript + Vite + element-plus+ Tailwind 后台管理
 
 -   github action 自动部署到 gitpage
 
+-   tsx 语法的支持
+
 ## 目录结构
 
 ```
