@@ -9,8 +9,21 @@
 在线地址：https://wangzhenhao.github.io/vite-vue3-admin/
 ![demo](https://raw.githubusercontent.com/WangZhenHao/vite-vue3-admin/master/public/img/1.jpg)
 
-vue + typeScript 后台管理
+vue + typeScript + Vite + element-plus+ Tailwind 后台管理
 
+## 项目亮点
+
+-   代码规范，自动格式化
+
+-   mock 数据
+
+-   elment-plus 的 table 二次封装，页面自适应
+
+-   原子 css 类的使用
+
+-   api 接口字段 TS 提示
+
+-   aixos封装，基础工具类，全局组件自动声明，Vue全局函数, 全局工具函数
 ## 目录结构
 
 ```
