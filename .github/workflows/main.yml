@@ -1,4 +1,4 @@
-name: vue3-analysis
+name: vvite-vue3-admin
 on:
   push:
     branches:

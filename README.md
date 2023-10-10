@@ -1,8 +1,50 @@
 # Vue 3 + TypeScript + Vite
 
+再参考大量的后台开源项目，发现都是花里胡哨的东西，如什么 eachart，拖拽等等
+实际上主要的功能就是`用户权限`，用户权限一般都是根据接口返回的路由列表，在本地/public/data 模拟了接口的返回
+非常真实模拟了日常开发。这样子，方便数据很轻松接入不同的后台如：Java, PHP，NodeJS 等，数据只要和模拟接口一样就可以了
+
 在线地址：https://wangzhenhao.github.io/vite-vue3-admin/
+![demo](https://github.com/WangZhenHao/vite-vue3-admin/raw/mvite-vue3-adminaster/public/img/1.jpg)
 
 vue + typeScript 后台管理
+
+## 目录结构
+
+```
+├─src
+|  ├─views                   页面
+|  ├─type                   全局类型定义
+|  |
+|  |
+|  ├─store                 store数据
+|  |
+|  ├─router                 路由
+|  |
+|  ├─components
+|  |     ├─global          全局组件（自动注册）
+|  |     |  ├─m-table      非常好用的table封装
+|  |     |
+|  ├─assets                资源
+|  |   ├─js                js目录
+|  |   | |
+|  |   | |
+|  |   ├─img                图片
+|  |   |
+|  |   ├─css              css资源
+|  |   |
+|  ├─api                   接口列表集合
+|  |
+├─public
+|   ├─data                mock数集合
+|   |  ├─roleList.json
+|   |  ├─user
+|   |  |  ├─getUserList.json
+|   |  |  └userLoginIn.json
+├─.vscode                自动格式化配置
+|    ├─extensions.json
+|    └settings.json
+```
 
 ## 原子 css 类 Tailwind
 
