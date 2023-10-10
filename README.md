@@ -7,7 +7,7 @@
 非常时候刚私活或者接外包的时候用
 
 在线地址：https://wangzhenhao.github.io/vite-vue3-admin/
-![demo](https://github.com/WangZhenHao/vite-vue3-admin/raw/mvite-vue3-adminaster/public/img/1.jpg)
+![demo](https://raw.githubusercontent.com/WangZhenHao/vite-vue3-admin/master/public/img/1.jpg)
 
 vue + typeScript 后台管理
 
