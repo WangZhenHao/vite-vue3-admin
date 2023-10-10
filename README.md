@@ -23,7 +23,10 @@ vue + typeScript + Vite + element-plus+ Tailwind 后台管理
 
 -   api 接口字段 TS 提示
 
--   aixos封装，基础工具类，全局组件自动声明，Vue全局函数, 全局工具函数
+-   aixos 封装，基础工具类，全局组件自动声明，Vue 全局函数, 全局工具函数
+
+-   github action 自动部署到 gitpage
+
 ## 目录结构
 
 ```
