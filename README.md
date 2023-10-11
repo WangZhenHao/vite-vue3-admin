@@ -15,7 +15,7 @@ vue + typeScript + Vite + element-plus+ Tailwind 后台管理
 
 只封装了基础功能，代码纯净，非常时候自定义的改造
 
--   代码规范，自动格式化
+-   eslint 代码规范，prettierrc 自动格式化
 
 -   mock 数据
 
