@@ -8,6 +8,11 @@ import { RouteRecordRaw } from 'vue-router';
 export interface Mapkey {
     [key: string]: RouteRecordRaw;
 }
+// declare module 'vue-router' {
+//     interface RouteMeta {
+//         title?: string;
+//     }
+// }
 
 const map: Mapkey = {
     '/system/menuList': {
@@ -24,6 +29,7 @@ const map: Mapkey = {
         component: () => import('@views/system/roleList/index.vue'),
         meta: {
             title: '角色列表',
+            KeepAlive: false,
         },
     },
     '/overview': {

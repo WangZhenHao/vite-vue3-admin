@@ -31,6 +31,8 @@ vue + typeScript + Vite + element-plus+ Tailwind 后台管理
 
 -   tsx 语法的支持
 
+-   默认路由缓存，KeepAlive 配置是否需要缓存默认 true
+
 ## 目录结构
 
 ```

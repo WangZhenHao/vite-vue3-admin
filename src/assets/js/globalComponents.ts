@@ -7,7 +7,7 @@ function globalComponents(app: App) {
     for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
         app.component(key, component);
     }
-    console.log(pageTable);
+    // console.log(pageTable);
     app.component('pageLayout', pageLayout);
     app.component('pageTable', pageTable);
 }

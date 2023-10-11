@@ -25,7 +25,7 @@ const columns = ref<$component.column[]>([
         prop: 'path',
         align: 'center',
         render(h: $component.h, parmas: any) {
-            console.log(parmas);
+            // console.log(parmas);
             return h('span', parmas.row.path ? parmas.row.path : '--');
         },
     },

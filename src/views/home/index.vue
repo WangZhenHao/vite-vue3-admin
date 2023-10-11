@@ -4,7 +4,21 @@
     <div :class="{ 'content-collapse': silder.isCollapse }" class="content-box">
         <c-tags></c-tags>
         <div class="content">
-            <router-view></router-view>
+            <router-view v-slot="{ Component }">
+                <keep-alive>
+                    <component
+                        :is="Component"
+                        v-if="$route.meta.KeepAlive !== false"
+                    />
+                </keep-alive>
+                <component
+                    :is="Component"
+                    v-if="$route.meta.KeepAlive === false"
+                />
+            </router-view>
+            <!-- <KeepAlive>
+                <router-view></router-view>
+            </KeepAlive> -->
         </div>
     </div>
 </template>

@@ -2,14 +2,13 @@
 import router from './index';
 import routerMap from './routerMap';
 import { userLoginIn } from '@api/login';
-type menuList = InferArray<
-    Awaited<ReturnType<typeof userLoginIn>>['result']['list']
->;
+type menuList = Awaited<ReturnType<typeof userLoginIn>>['result']['list'];
 
-function addRouter(list: menuList[]) {
+function addRouter(list: menuList) {
     for (let item of list) {
         const comp = routerMap[item.path];
         if (comp) {
+            comp.meta!.title = item.name;
             router.addRoute('Home', comp);
         }
     }

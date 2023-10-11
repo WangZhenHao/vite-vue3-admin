@@ -5,11 +5,11 @@ import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
 import user from '@store/user';
 
-const map = {
-    path: '/system/menuList',
-    name: 'menuList',
-    component: () => import('@views/system/menuList/index.vue'),
-};
+// const map = {
+//     path: '/system/menuList',
+//     name: 'menuList',
+//     component: () => import('@views/system/menuList/index.vue'),
+// };
 
 const routes: RouteRecordRaw[] = [
     {
@@ -21,7 +21,6 @@ const routes: RouteRecordRaw[] = [
         name: 'Home',
         component: Home,
         children: [],
-        redirect: '/overview',
     },
     {
         path: '/login',
@@ -38,7 +37,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     nprogress.start();
-    console.log(to);
+    // console.log(to);
     const userInfo = user();
     if (to.name === 'Login') {
         if (!userInfo.menuList.length) {
