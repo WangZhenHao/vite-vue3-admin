@@ -9,11 +9,13 @@
                     <component
                         :is="Component"
                         v-if="$route.meta.KeepAlive !== false"
+                        :key="$route.name"
                     />
                 </keep-alive>
                 <component
                     :is="Component"
                     v-if="$route.meta.KeepAlive === false"
+                    :key="$route.name"
                 />
             </router-view>
             <!-- <KeepAlive>
