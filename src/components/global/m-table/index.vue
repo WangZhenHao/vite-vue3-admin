@@ -1,5 +1,5 @@
 <template>
-    <el-table v-bind="$attrs">
+    <el-table border v-bind="$attrs">
         <el-table-column
             v-for="(item, index) in columns"
             v-bind="item"
@@ -19,17 +19,13 @@ import { onMounted, h } from 'vue';
 import type { TableProps } from 'element-plus/lib/components/table';
 import type { ColumnProps } from './index.d.ts';
 
-interface typeProps extends TableProps<any> {
+interface typeProps extends Partial<TableProps<any>> {
     columns: ColumnProps[];
 }
 
 const fn = h;
 const props = withDefaults(defineProps<typeProps>(), {
     columns: () => [],
-    data: () => [],
-    flexible: false,
-    tableLayout: 'fixed',
-    border: true,
 });
 
 onMounted(() => {
