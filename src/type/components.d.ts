@@ -8,9 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     MTable: typeof import('./../components/global/m-table/index.vue')['default']
+    MTableColumn: typeof import('./../components/global/m-table/m-table-column.vue')['default']
     PageLayout: typeof import('./../components/global/page-layout/index.vue')['default']
     PageTable: typeof import('./../components/global/page-table/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TableColumn: typeof import('./../components/global/m-table/table-column.vue')['default']
+    TableColumn2: typeof import('./../components/global/m-table/table-column2.vue')['default']
   }
 }

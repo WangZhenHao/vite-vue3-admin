@@ -11,6 +11,7 @@ export interface typeScrope {}
 export interface ColumnProps extends Partial<TableColumnCtx<any>> {
     slot?: string;
     render?: (fn: typeof h, scrope: any) => VNode;
+    children?: ColumnProps[];
 }
 
 export type renderFn = typeof h;

@@ -1,12 +1,15 @@
 <template>
     <div class="text-cyan-800 font-bold">我的概况</div>
     <m-table :data="tableData" :columns="columns">
-        <template #action="scope">
-            <el-button>编辑</el-button>
-            {{ scope.row.name }}
+        <template #action>
+            <div>
+                <el-button>编辑</el-button>
+            </div>
         </template>
-        <template #other>
-            <span>哈哈哈</span>
+        <template #city>
+            <div>
+                <el-button>city</el-button>
+            </div>
         </template>
     </m-table>
 </template>
@@ -61,22 +64,21 @@ const columns = ref([
     {
         prop: 'date',
         label: '日期',
-        width: '500',
-    },
-    {
-        prop: 'name',
-        label: '姓名',
-        width: '200',
     },
     {
         prop: 'state',
         label: '州',
-        width: '200',
-    },
-    {
-        prop: 'city',
-        label: '城市',
-        width: '200',
+        children: [
+            {
+                prop: 'name',
+                label: '姓名',
+            },
+            {
+                prop: 'city',
+                label: '城市',
+                // slot: 'city',
+            },
+        ],
     },
     {
         prop: 'action',
@@ -91,7 +93,10 @@ const columns = ref([
         fixed: 'right',
         width: '200',
         align: 'center',
-        slot: 'other',
+        // slot: 'other',
+        render(h: any, scope: any) {
+            return h('span', '哈哈哈哈');
+        },
     },
 ]);
 </script>
